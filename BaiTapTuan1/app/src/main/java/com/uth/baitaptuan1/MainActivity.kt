@@ -5,10 +5,11 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -23,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uth.baitaptuan1.ui.theme.BaiTapTuan1Theme
-import com.uth.baitaptuan1.ui.theme.BaiTapTuan1Theme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,34 +74,63 @@ fun ProfileScreen() {
             )
         }
 
-        // Nút "+"
-        IconButton(
-            onClick = { },
+        // Nút "<-"
+        Box(
             modifier = Modifier
                 .align(Alignment.TopStart)
                 .padding(16.dp)
-        ) {
-            Icon(
-                imageVector = Icons.Default.ArrowBack,
-                contentDescription ="Back"
-            )
-        }
+                .size(54.dp)
+                .offset(y = 24.dp)
+                .border(
+                    width = 2.dp,
+                    color = MaterialTheme.colorScheme.primary,
+                    shape = RoundedCornerShape(12.dp)
+                ),
+            contentAlignment = Alignment.Center
+        )
+        {
+            IconButton(
+                onClick = { },
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(16.dp)
 
-        // Nút "Settings"
-        IconButton(
-            onClick = { },
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = "Back"
+                )
+            }
+        }
+        Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .padding(16.dp)
+                .offset(y = 24.dp)
+                .size(54.dp)
+                .border(
+                    width = 2.dp,
+                    color = MaterialTheme.colorScheme.primary,
+                    shape = RoundedCornerShape(12.dp)
+                ),
+            contentAlignment = Alignment.Center
         ) {
-            Icon(
-                imageVector = Icons.Default.Settings,
-                contentDescription = "Settings"
-            )
+            // Nút "Settings"
+            IconButton(
+                onClick = { },
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(16.dp)
+
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Settings,
+                    contentDescription = "Settings"
+                )
+            }
         }
     }
 }
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewProfileScreen() {
