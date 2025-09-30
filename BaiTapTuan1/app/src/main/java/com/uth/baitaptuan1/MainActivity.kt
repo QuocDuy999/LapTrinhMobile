@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -53,7 +54,7 @@ fun ProfileScreen() {
             verticalArrangement = Arrangement.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.avatar), // thêm ảnh avatar vào drawable
+                painter = painterResource(id = R.drawable.avatar),
                 contentDescription = "Avatar",
                 modifier = Modifier
                     .size(180.dp)
@@ -124,8 +125,8 @@ fun ProfileScreen() {
 
             ) {
                 Icon(
-                    imageVector = Icons.Default.Settings,
-                    contentDescription = "Settings"
+                    imageVector = Icons.Default.Person,
+                    contentDescription = "Person"
                 )
             }
         }
