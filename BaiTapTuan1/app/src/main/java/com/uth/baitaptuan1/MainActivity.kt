@@ -1,4 +1,5 @@
 package com.uth.baitaptuan1
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,7 +13,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,14 +26,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uth.baitaptuan1.ui.theme.BaiTapTuan1Theme
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             BaiTapTuan1Theme {
-               ProfileScreen()
+                ProfileScreen()
             }
         }
     }
@@ -75,63 +74,55 @@ fun ProfileScreen() {
             )
         }
 
-        // Nút "<-"
-        Box(
+        // Nút Back
+        IconButtonWithBorder(
             modifier = Modifier
                 .align(Alignment.TopStart)
-                .padding(16.dp)
-                .size(54.dp)
-                .offset(y = 24.dp)
-                .border(
-                    width = 2.dp,
-                    color = MaterialTheme.colorScheme.primary,
-                    shape = RoundedCornerShape(12.dp)
-                ),
-            contentAlignment = Alignment.Center
-        )
-        {
-            IconButton(
-                onClick = { },
-                modifier = Modifier
-                    .align(Alignment.TopStart)
-                    .padding(16.dp)
-
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = "Back"
-                )
-            }
+                .padding(start = 16.dp, top = 40.dp),
+            icon = Icons.Filled.ArrowBack,
+            contentDescription = "Back"
+        ) {
         }
-        Box(
+
+        // Nút Settings
+        IconButtonWithBorder(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(16.dp)
-                .offset(y = 24.dp)
-                .size(54.dp)
-                .border(
-                    width = 2.dp,
-                    color = MaterialTheme.colorScheme.primary,
-                    shape = RoundedCornerShape(12.dp)
-                ),
-            contentAlignment = Alignment.Center
+                .padding(end = 16.dp, top = 40.dp),
+            icon = Icons.Filled.Person,
+            contentDescription = "Person"
         ) {
-            // Nút "Settings"
-            IconButton(
-                onClick = { },
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .padding(16.dp)
-
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Person,
-                    contentDescription = "Person"
-                )
-            }
         }
     }
 }
+
+@Composable
+fun IconButtonWithBorder(
+    modifier: Modifier = Modifier,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    contentDescription: String,
+    onClick: () -> Unit
+) {
+    Box(
+        modifier = modifier
+            .size(54.dp)
+            .border(
+                width = 2.dp,
+                color = MaterialTheme.colorScheme.primary,
+                shape = RoundedCornerShape(12.dp)
+            ),
+        contentAlignment = Alignment.Center
+    ) {
+        IconButton(onClick = onClick) {
+            Icon(
+                imageVector = icon,
+                contentDescription = contentDescription,
+                tint = MaterialTheme.colorScheme.primary
+            )
+        }
+    }
+}
+
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewProfileScreen() {
