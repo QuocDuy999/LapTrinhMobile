@@ -1,5 +1,4 @@
 package com.uth.baitaptuan1
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,6 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uth.baitaptuan1.ui.theme.BaiTapTuan1Theme
+import androidx.compose.ui.graphics.Color
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,14 +59,19 @@ fun ProfileScreen() {
                 modifier = Modifier
                     .size(180.dp)
                     .clip(CircleShape),
+
                 contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.height(20.dp))
             Text(
-                text = "Quốc Duy",
-                fontSize = 34.sp,
-                fontWeight = FontWeight.Bold
+                text = "Cao Quốc Duy",
+                style = MaterialTheme.typography.headlineLarge.copy(
+                    color = Color.Red,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 34.sp
+                )
             )
+
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "Đồng Tháp, Việt Nam",
@@ -84,7 +90,7 @@ fun ProfileScreen() {
         ) {
         }
 
-        // Nút Settings
+        // Nút Person
         IconButtonWithBorder(
             modifier = Modifier
                 .align(Alignment.TopEnd)
