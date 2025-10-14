@@ -108,7 +108,8 @@ fun EmailCheckScreen() {
                     }
                 }
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
         ) {
             Text(
                 text = "Kiểm tra",

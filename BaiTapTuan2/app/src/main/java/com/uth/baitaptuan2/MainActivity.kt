@@ -1,6 +1,7 @@
 package com.uth.baitaptuan2
 
 import android.R.attr.x
+import android.R.attr.y
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,9 +38,9 @@ fun BaiTapTuan2() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp),
+            .padding(20.dp)
+            .offset(x = 0.dp, y = 100.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
     ) {
         // Tiêu đề
         Text(
@@ -133,6 +134,7 @@ fun BaiTapTuan2() {
             modifier = Modifier
                 .width(150.dp)
                 .height(48.dp),
+                //.offset(x= 0.dp, y = 0.dp),
             shape = RoundedCornerShape(8.dp)
         ) {
             Text(

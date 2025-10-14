@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
@@ -69,7 +70,7 @@ fun NumberScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        Spacer(modifier = Modifier.height(300.dp))
+      Spacer(modifier = Modifier.height(200.dp))
         Text(
             text = "Thực hành 02",
             fontSize = 24.sp,
@@ -86,7 +87,6 @@ fun NumberScreen() {
                 singleLine = true,
                 modifier = Modifier.width(240.dp),
                 shape = RoundedCornerShape(16.dp)
-
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -108,13 +108,14 @@ fun NumberScreen() {
                     }
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2196F3)),
-                modifier = Modifier.height(60.dp),
+                modifier = Modifier
+                    .height(60.dp)
+                    .offset(x = 0.dp, y = 0.dp),
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Text("Tạo")
             }
         }
-
         if (error.isNotEmpty()) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
