@@ -235,8 +235,6 @@ fun ComponentItem(title: String, desc: String, navController: NavHostController)
         }
     }
 }
-
-
 @Composable
 fun DetailScreen(type: String, navController: NavHostController) {
     val detailName = when (type) {
@@ -319,6 +317,7 @@ fun IconButtonWithBorder(
         }
     }
 }
+
 @Composable
 fun TextDetail() {
     Column(
@@ -1018,4 +1017,3 @@ fun SnackBarDetail() {
         )
     }
 }
-
