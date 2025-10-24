@@ -90,8 +90,8 @@ fun OnBoardingScreen(navController: NavHostController) {
                 image = painterResource(id = page.image),
                 chude = page.chude,
                 noidung = page.noidung,
-                next = { navController.navigate("") },
-                back = { navController.popBackStack() }
+//                next = { navController.navigate("") },
+//                back = { navController.popBackStack() }
             )
         }
         // Hàng 3: Các nút Back/Next

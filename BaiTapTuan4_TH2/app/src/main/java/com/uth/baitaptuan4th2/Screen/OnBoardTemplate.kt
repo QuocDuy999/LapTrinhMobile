@@ -52,9 +52,9 @@ fun OnBoardTemplate(
     image: Painter,
     chude: String,
     noidung: String,
-    nextLabel: String = "Next",
-    next: () -> Unit,
-    back: (() -> Unit),
+//    nextLabel: String = "Next",
+//    next: () -> Unit,
+//    back: (() -> Unit),
 ) {
     Column(
         modifier = Modifier

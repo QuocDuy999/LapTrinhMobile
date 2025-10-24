@@ -50,8 +50,8 @@ fun ScreenThird(navController: NavHostController) {
             image = painterResource(id = page.image),
             chude = page.chude,
             noidung = page.noidung,
-            next = { navController.navigate("SplashScreen") },
-            back = { navController.popBackStack() }
+//            next = { navController.navigate("SplashScreen") },
+//            back = { navController.popBackStack() }
         )
     }
 }

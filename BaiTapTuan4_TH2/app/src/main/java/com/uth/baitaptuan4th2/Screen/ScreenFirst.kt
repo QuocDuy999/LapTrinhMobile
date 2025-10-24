@@ -50,8 +50,8 @@ fun ScreenFirst(navController: NavHostController) {
             image = painterResource(id = page.image),
             chude = page.chude,
             noidung = page.noidung,
-            next = { navController.navigate("ScreenSecond") },
-            back = { navController.popBackStack() }
+//            next = { navController.navigate("ScreenSecond") },
+//            back = { navController.popBackStack() }
         )
     }
 }
