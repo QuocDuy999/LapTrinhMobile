@@ -82,4 +82,3 @@ fun BookListScreen(books: List<Book>, onAddBookToCatalog: (String) -> Unit) {
         )
     }
 }
-
